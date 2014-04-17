@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:padding="@dimen/step_1" >
+
+    <ListView
+        a:id="@+id/list_choose_lect"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:layout_alignParentTop="true" />
+
+    <View
+        a:layout_width="match_parent"
+        a:layout_height="@dimen/step_1_8"
+        a:layout_margin="@dimen/step_1_2"
+        a:background="@android:color/darker_gray" />
+
+    <RelativeLayout
+        a:layout_width="match_parent"
+        a:layout_height="@dimen/step_3"
+        a:layout_alignParentBottom="true"
+        a:layout_below="@id/list_choose_lect"
+        a:padding="@dimen/step_1_2" >
+
+        <Button
+            a:id="@+id/btn_cancel_lect"
+            a:layout_width="@dimen/step_2"
+            a:layout_height="@dimen/step_2"
+            a:layout_centerInParent="true"
+            a:layout_margin="@dimen/step_1_2"
+            a:background="@android:drawable/btn_default"
+            a:padding="@dimen/step_1_2"
+            a:paddingLeft="@dimen/step_1"
+            a:paddingRight="@dimen/step_1"
+            a:singleLine="true"
+            a:text="@string/cancel"
+            a:textColor="#101010" />
+    </RelativeLayout>
+
+</RelativeLayout>

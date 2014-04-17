@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="step_0">0dp</dimen>
+    <dimen name="step_1_16">1dp</dimen>
+    <dimen name="step_1_8">2dp</dimen>
+    <dimen name="step_1_4">4dp</dimen>
+    <dimen name="step_1_2">8dp</dimen>
+    <dimen name="step_1">16dp</dimen>
+    <dimen name="step_2">32dp</dimen>
+    <dimen name="step_3">48dp</dimen>
+    <dimen name="step_6">96dp</dimen>
+    <dimen name="step_7">112dp</dimen>
+    <dimen name="step_8">128dp</dimen>
+</resources>

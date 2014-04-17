@@ -1,0 +1,9 @@
+<TextView xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent" 
+    a:textStyle="italic"
+    a:textColor="@android:color/secondary_text_light"
+    a:gravity="center"
+    a:text="@string/title_empty_view"
+ />

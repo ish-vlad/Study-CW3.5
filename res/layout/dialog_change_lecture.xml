@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:orientation="vertical"
+    a:padding="@dimen/step_1" >
+
+    <TextView
+        a:id="@+id/textView5"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:gravity="left"
+        a:paddingBottom="@dimen/step_1_8"
+        a:singleLine="true"
+        a:text="@string/view_name" />
+
+    <EditText
+        a:id="@+id/dialog_change_lecture_name"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:gravity="left"
+        a:paddingBottom="@dimen/step_1_8"
+        a:paddingLeft="@dimen/step_1_2"
+        a:singleLine="true" />
+
+    <TextView
+        a:id="@+id/textView6"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:gravity="left"
+        a:paddingBottom="@dimen/step_1_8"
+        a:singleLine="true"
+        a:text="@string/view_date" />
+
+    <EditText
+        a:id="@+id/dialog_change_lecture_date"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:gravity="left"
+        a:paddingBottom="@dimen/step_1_8"
+        a:paddingLeft="@dimen/step_1_2"
+        a:singleLine="true" />
+
+    <TextView
+        a:id="@+id/textView7"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:gravity="center"
+        a:paddingBottom="@dimen/step_1_8"
+        a:singleLine="true"
+        a:text="@string/view_comment" />
+
+    <EditText
+        a:id="@+id/dialog_change_lecture_comment"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:gravity="left"
+        a:minLines="3"
+        a:paddingBottom="@dimen/step_1_8"
+        a:paddingLeft="@dimen/step_1_2"
+        a:singleLine="true" />
+    
+    
+
+    <LinearLayout
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:orientation="horizontal"
+        a:paddingLeft="@dimen/step_3"
+        a:paddingRight="@dimen/step_3" >
+
+        <Button
+            a:id="@+id/dialog_lect_btn_commit"
+            a:layout_width="wrap_content"
+            a:layout_height="@dimen/step_3"
+            a:layout_marginRight="@dimen/step_1_2"
+            a:layout_weight="1"
+            a:background="@android:drawable/btn_default"
+            a:paddingLeft="@dimen/step_1"
+            a:paddingRight="@dimen/step_1"
+            a:singleLine="true"
+            a:text="@string/ok"
+            a:textColor="#101010" />
+
+        <Button
+            a:id="@+id/dialog_lect_btn_cancel"
+            a:layout_width="wrap_content"
+            a:layout_height="@dimen/step_3"
+            a:layout_marginLeft="@dimen/step_1_2"
+            a:layout_weight="1"
+            a:background="@android:drawable/btn_default"
+            a:paddingLeft="@dimen/step_1"
+            a:paddingRight="@dimen/step_1"
+            a:singleLine="true"
+            a:text="@string/cancel"
+            a:textColor="#101010" />
+    </LinearLayout>
+
+</LinearLayout>

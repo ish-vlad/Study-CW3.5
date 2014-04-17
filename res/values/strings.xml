@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="go_chooser">
+        <item>Лекцию</item>
+        <item>Лабу</item>
+    </string-array>
+    
+    
+    <!-- UTILS -->
+    <string name="add">Добавить</string>
+    <string name="cancel">Отмена</string>
+    <string name="change">Изменить</string>
+    <string name="delete">Удалить</string>
+    <string name="empty_string"></string>
+    <string name="end">Завершить</string>
+    <string name="ok">OК</string>
+    <string name="select">Выбрать</string>
+    <string name="select_file">Выберите файл</string>
+    <!-- /UTILS -->
+    
+    
+    <string name="app_name">Android-CW3_5</string>
+
+    <string name="btn_start_view">Просмотреть</string>
+    <string name="btn_start_lecture">Начать Лекцию</string>
+    <string name="btn_start_labs">Начать Лабы</string>
+    
+    <string name="dialog_add_comment_text">Добавить комментарии?</string>
+    
+    <string name="hint_start_view">Нажмите, чтобы начать</string>
+    
+    <string name="title_empty_view">Пусто</string>
+    <string name="title_choise_group">Выберите группу</string>
+    <string name="title_choise_object">Выберите предмет</string>
+    <string name="title_dialog_add_comment">Комментарии</string>
+    <string name="title_dialog_check_people">Отметьте присутствующих</string>
+    <string name="title_dialog_choose_lecture">Выберите тему</string>
+    <string name="title_dialog_lecture">Просмотр</string>
+    <string name="title_dialog_open">Загрузить файл</string>
+    <string name="title_dialog_open_body">Необходимо указать путь к файлу, соответствующему структуре XML-файла для добавления группы\\предмета</string>
+    <string name="title_start_activity">Контроль устпеваемости</string>
+    
+    <string name="toast_no_lectures">В данном разделе лекций нет.</string>
+    
+    <string name="view_name">Название:</string>
+    <string name="view_date">Дата:</string>
+    <string name="view_comment">Комментарий:</string>
+    
+    
+</resources>

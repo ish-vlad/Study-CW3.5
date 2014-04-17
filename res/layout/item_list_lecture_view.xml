@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    a:layout_width="match_parent"
+    a:layout_height="wrap_content"
+    a:padding="@dimen/step_1_4" >
+
+    <TextView
+        a:id="@+id/item_lecture_name"
+        a:layout_width="wrap_content"
+        a:layout_height="wrap_content"
+        a:layout_alignParentStart="true"
+        a:gravity="left"
+        a:paddingLeft="@dimen/step_1_4"
+        a:paddingTop="@dimen/step_1_4" />
+
+    <TextView
+        a:id="@+id/item_lecture_date"
+        a:layout_width="wrap_content"
+        a:layout_height="wrap_content"
+        a:layout_below="@id/item_lecture_name"
+        a:layout_alignParentLeft="true"
+        a:gravity="left"
+        a:paddingLeft="@dimen/step_1_2"
+        a:paddingTop="@dimen/step_1_4"
+        a:textColor="@android:color/secondary_text_light" />
+
+    <TextView
+        a:id="@+id/item_lecture_comment"
+        a:layout_width="@dimen/step_2"
+        a:layout_height="@dimen/step_2"
+        a:layout_alignParentRight="true"
+        a:layout_margin="@dimen/step_1_2"
+        a:background="@drawable/comment_icon"
+        a:padding="@dimen/step_1_2" />
+
+</RelativeLayout>

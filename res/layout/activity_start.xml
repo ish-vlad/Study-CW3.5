@@ -1,0 +1,113 @@
+<ScrollView xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
+    a:paddingTop="@dimen/step_2"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent" >
+
+    <LinearLayout
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:layout_gravity="center"
+        a:orientation="horizontal" >
+
+        <LinearLayout
+            a:id="@+id/block_start_view"
+            a:layout_width="match_parent"
+            a:layout_height="match_parent"
+            a:layout_weight="1"
+            a:gravity="center"
+            a:orientation="vertical"
+            a:padding="@dimen/step_1" >
+
+            <ImageView
+                a:src="@drawable/start_view"
+                a:layout_width="match_parent"
+                a:layout_height="@dimen/step_0"
+                a:layout_marginBottom="@dimen/step_2"
+                a:maxHeight="@dimen/step_6"
+                a:layout_weight="9"
+                a:contentDescription="@string/hint_start_view"
+                a:scaleType="fitCenter" />
+
+            <Button
+                a:id="@+id/btn_start_view"
+                a:layout_width="wrap_content"
+                a:layout_height="@dimen/step_2"
+                a:maxHeight="@dimen/step_2"
+                a:layout_weight="1"
+                a:background="@android:drawable/btn_default"
+                a:textColor="#101010"
+                a:paddingLeft="@dimen/step_1"
+                a:paddingRight="@dimen/step_1"
+                a:singleLine="true"
+                a:text="@string/btn_start_view" />
+        </LinearLayout>
+
+        <LinearLayout
+            a:id="@+id/block_start_lecture"
+            a:layout_width="match_parent"
+            a:layout_height="match_parent"
+            a:layout_weight="1"
+            a:gravity="center"
+            a:orientation="vertical"
+            a:padding="@dimen/step_1" >
+
+            <ImageView
+                a:src="@drawable/start_lecture"
+                a:layout_width="match_parent"
+                a:layout_height="@dimen/step_0"
+                a:layout_marginBottom="@dimen/step_2"
+                a:layout_weight="9"
+                a:maxHeight="@dimen/step_6"
+                a:contentDescription="@string/hint_start_view"
+                a:scaleType="fitCenter" />
+
+            <Button
+                a:id="@+id/btn_start_lecture"
+                a:layout_width="wrap_content"
+                a:layout_height="@dimen/step_2"
+                a:maxHeight="@dimen/step_2"
+                a:layout_weight="1"
+                a:background="@android:drawable/btn_default"
+                a:textColor="#101010"
+                a:paddingLeft="@dimen/step_1"
+                a:paddingRight="@dimen/step_1"
+                a:singleLine="true"
+                a:text="@string/btn_start_lecture" />
+        </LinearLayout>
+
+        <LinearLayout
+            a:id="@+id/block_start_labs"
+            a:layout_width="match_parent"
+            a:layout_height="match_parent"
+            a:layout_weight="1"
+            a:gravity="center"
+            a:orientation="vertical"
+            a:padding="@dimen/step_1" >
+
+            <ImageView
+                a:src="@drawable/start_labs"
+                a:layout_width="match_parent"
+                a:layout_height="@dimen/step_0"
+                a:layout_weight="9"
+                a:layout_marginBottom="@dimen/step_2"
+                a:maxHeight="@dimen/step_6"
+                a:contentDescription="@string/hint_start_view"
+                a:scaleType="fitCenter" />
+
+            <Button
+                a:id="@+id/btn_start_labs"
+                a:layout_width="wrap_content"
+                a:layout_height="@dimen/step_2"
+                a:maxHeight="@dimen/step_2"
+                a:background="@android:drawable/btn_default"
+                a:textColor="#101010"
+                a:paddingLeft="@dimen/step_1"
+                a:paddingRight="@dimen/step_1"
+                a:layout_weight="1"
+                a:singleLine="true"
+                a:text="@string/btn_start_labs" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

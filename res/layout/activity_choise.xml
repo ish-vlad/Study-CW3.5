@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:baselineAligned="false"
+    a:orientation="horizontal" >
+
+    <FrameLayout
+        a:id="@+id/fragment_choise_group"
+        a:layout_width="match_parent"
+        a:layout_height="match_parent"
+        a:layout_weight="1" />
+	
+    <View
+        a:layout_width="@dimen/step_1_16"
+        a:layout_height="wrap_content"
+        a:background="@android:color/darker_gray" />
+    
+    <FrameLayout
+        a:id="@+id/fragment_choise_object"
+        a:layout_width="match_parent"
+        a:layout_height="match_parent"
+        a:layout_weight="1" />
+
+</LinearLayout>

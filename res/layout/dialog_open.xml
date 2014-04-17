@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:padding="@dimen/step_1" >
+
+    <TextView
+        a:id="@+id/textView1"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:layout_alignParentTop="true"
+        a:layout_gravity="center"
+        a:paddingBottom="@dimen/step_1_2"
+        a:singleLine="false"
+        a:text="@string/title_dialog_open_body" />
+
+    <LinearLayout
+        a:id="@+id/block_choise_file"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:paddingBottom="@dimen/step_1_2"
+        a:layout_below="@id/textView1"
+        a:orientation="horizontal" >
+		<EditText
+            a:layout_weight="5"
+            a:id="@+id/dialog_edit_text"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_marginLeft="@dimen/step_1"
+            a:layout_marginRight="@dimen/step_1"
+            a:hint="@string/select_file"
+            a:singleLine="true" />
+        <Button
+            a:layout_weight="1"
+            a:id="@+id/dialog_btn_open"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_marginLeft="@dimen/step_1"
+            a:layout_marginRight="@dimen/step_1"
+            a:background="@android:drawable/btn_default"
+            a:paddingLeft="@dimen/step_1"
+            a:paddingRight="@dimen/step_1"
+            a:singleLine="true"
+            a:text="@string/select"
+            a:textColor="#101010" />
+
+        
+    </LinearLayout>
+
+    <LinearLayout 
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:layout_below="@id/block_choise_file"
+        a:orientation="horizontal"
+        a:paddingLeft="@dimen/step_3"
+        a:paddingRight="@dimen/step_3">
+        <Button
+            a:id="@+id/dialog_btn_cancel"
+            a:layout_width="wrap_content"
+            a:layout_weight="1"
+            a:layout_height="@dimen/step_3"
+            a:background="@android:drawable/btn_default"
+            a:paddingLeft="@dimen/step_1"
+            a:paddingRight="@dimen/step_1"
+            a:singleLine="true"
+            a:layout_marginRight="@dimen/step_1_2"
+            a:text="@string/cancel"
+            a:textColor="#101010" />
+        <Button
+            a:id="@+id/dialog_btn_ok"
+            a:layout_weight="1"
+            a:layout_width="wrap_content"
+            a:layout_height="@dimen/step_3"
+            a:background="@android:drawable/btn_default"
+            a:layout_marginLeft="@dimen/step_1_2"
+            a:paddingLeft="@dimen/step_1"
+            a:paddingRight="@dimen/step_1"
+            a:singleLine="true"
+            a:text="@string/ok"
+            a:textColor="#101010" />
+        
+    </LinearLayout>
+    
+    
+
+</RelativeLayout>
