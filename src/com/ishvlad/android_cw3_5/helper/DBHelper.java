@@ -1,5 +1,7 @@
 package com.ishvlad.android_cw3_5.helper;
 
+import com.ishvlad.android_cw3_5.layer.DBNames;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -39,6 +41,19 @@ public class DBHelper {
 		}
 	}
 	
+	public int sizeInObject(String table, int objectId) {
+		String[] selectionArgs = new String[] {Integer.toString(objectId)};
+
+		Cursor cursorLect = DBHelper.mDB.rawQuery(
+				"SELECT COUNT(*) FROM " + table + 
+				" WHERE " + DBNames.TABLES.LECTURE.CELLS.OBJECT_ID + "== ?"
+				, selectionArgs
+				);
+		
+		cursorLect.moveToFirst();
+		return cursorLect.getInt(0);
+	}
+
 	public Cursor getAll(String table) {
 		return mDB.query(table, null, null, null, null, null, null);
 	}
@@ -47,6 +62,5 @@ public class DBHelper {
 		String[] selectionArgs = new String[] {Integer.toString(id)};
 		return mDB.query(table, null, "_id == ?", selectionArgs, null, null, null);
 	}
-
 	
 }

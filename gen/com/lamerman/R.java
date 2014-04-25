@@ -11,28 +11,28 @@ public final class R {
 		public static final int gray = 0x7f060000;
 	}
 	public static final class drawable {
-		public static final int file = 0x7f020059;
-		public static final int folder = 0x7f02005a;
-		public static final int icon = 0x7f02005c;
+		public static final int file = 0x7f02005a;
+		public static final int folder = 0x7f02005b;
+		public static final int icon = 0x7f02005d;
 	}
 	public static final class id {
-		public static final int fdButtonCancel = 0x7f070072;
-		public static final int fdButtonCreate = 0x7f070073;
-		public static final int fdButtonNew = 0x7f07006d;
-		public static final int fdButtonSelect = 0x7f07006e;
-		public static final int fdEditTextFile = 0x7f070071;
-		public static final int fdLinearLayoutCreate = 0x7f07006f;
-		public static final int fdLinearLayoutList = 0x7f07006b;
-		public static final int fdLinearLayoutSelect = 0x7f07006c;
-		public static final int fdrowimage = 0x7f070075;
-		public static final int fdrowtext = 0x7f070076;
-		public static final int path = 0x7f070074;
-		public static final int relativeLayout01 = 0x7f07006a;
-		public static final int textViewFilename = 0x7f070070;
+		public static final int fdButtonCancel = 0x7f070067;
+		public static final int fdButtonCreate = 0x7f070068;
+		public static final int fdButtonNew = 0x7f070062;
+		public static final int fdButtonSelect = 0x7f070063;
+		public static final int fdEditTextFile = 0x7f070066;
+		public static final int fdLinearLayoutCreate = 0x7f070064;
+		public static final int fdLinearLayoutList = 0x7f070060;
+		public static final int fdLinearLayoutSelect = 0x7f070061;
+		public static final int fdrowimage = 0x7f07006a;
+		public static final int fdrowtext = 0x7f07006b;
+		public static final int path = 0x7f070069;
+		public static final int relativeLayout01 = 0x7f07005f;
+		public static final int textViewFilename = 0x7f070065;
 	}
 	public static final class layout {
-		public static final int file_dialog_main = 0x7f03001f;
-		public static final int file_dialog_row = 0x7f030020;
+		public static final int file_dialog_main = 0x7f03001e;
+		public static final int file_dialog_row = 0x7f03001f;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f050000;

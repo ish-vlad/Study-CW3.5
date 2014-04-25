@@ -1,0 +1,76 @@
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    a:layout_width="match_parent"
+    a:layout_height="@dimen/step_4"
+    a:orientation="horizontal"
+    a:padding="@dimen/step_1_2" >
+
+    <RelativeLayout
+        a:id="@+id/item_student_block"
+        a:layout_width="wrap_content"
+        a:layout_height="match_parent"
+        a:layout_weight="7"
+        a:paddingLeft="@dimen/step_1_4"
+        a:paddingTop="@dimen/step_1_4" >
+
+        <TextView
+            a:id="@+id/item_student_name"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_alignParentLeft="true"
+            a:layout_alignParentTop="true"
+            a:gravity="left" />
+
+        <RelativeLayout
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_alignParentBottom="true"
+            a:layout_below="@id/item_student_name"
+            a:paddingBottom="@dimen/step_1_4"
+            a:paddingLeft="@dimen/step_1" >
+
+            <TextView
+                a:id="@+id/item_student_date"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:layout_alignParentTop="true"
+                a:layout_alignParentLeft="true"
+                a:gravity="left" />
+
+            <TextView
+                a:id="@+id/item_student_separator_comment"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:layout_alignParentTop="true"
+                a:paddingLeft="@dimen/step_1"
+                a:layout_toRightOf="@id/item_student_date"
+                a:gravity="left"
+                a:text="@string/text_comment_separator" />
+
+            <TextView
+                a:id="@+id/item_student_other"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:layout_alignParentTop="true"
+                a:layout_toRightOf="@id/item_student_separator_comment"
+                a:gravity="left"
+                a:singleLine="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        a:id="@+id/item_student_separator"
+        a:layout_width="@dimen/step_1_8"
+        a:layout_height="match_parent"
+        a:background="@android:color/darker_gray" />
+
+    <TextView
+        a:id="@+id/item_student_btn"
+        a:layout_width="@dimen/step_3"
+        a:layout_height="@dimen/step_3"
+        a:layout_weight="0"
+        a:maxWidth="@dimen/step_3"
+        a:padding="@dimen/step_1_2"
+        a:width="@dimen/step_3" />
+
+</LinearLayout>

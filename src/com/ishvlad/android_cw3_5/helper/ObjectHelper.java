@@ -20,36 +20,6 @@ public class ObjectHelper {
 		mCtx = context;
 	}
 
-	/*public LinkedList<ObjectBase> getAllBase() {
-		Cursor cursorGroup = getAll(TABLE.toString());
-		LinkedList<ObjectBase> result = new LinkedList<ObjectBase>();
-		
-		if(cursorGroup.moveToFirst()) {
-			do {
-				result.add(new ObjectBase(
-								cursorGroup.getInt(TABLE.CELLS.ID.getIndex()),
-								cursorGroup.getString(TABLE.CELLS.NAME.getIndex()),
-								cursorGroup.getInt(TABLE.CELLS.YEAR.getIndex()),
-								cursorGroup.getInt(TABLE.CELLS.HAS_COURSE_WORK.getIndex())
-								));
-			} while (cursorGroup.moveToNext());
-		}
-		cursorGroup.close();
-		
-		Collections.sort(result, new Comparator<ObjectBase>() {
-
-			@Override
-			public int compare(ObjectBase lhs, ObjectBase rhs) {
-				Integer secondYear = rhs.year;
-				
-				return secondYear.compareTo(lhs.year) != 0  ? secondYear.compareTo(lhs.year) 
-														    : lhs.name.compareTo(rhs.name); 
-			}
-		});
-		
-		return result;
-	}*/
-	
 	public LinkedList<ObjectBase> getAllBaseFromGroupId(int groupId) {
 		String[] selectionArgs = new String[] {Integer.toString(groupId)};
 		DBHelper.getInstance(mCtx);
@@ -69,8 +39,7 @@ public class ObjectHelper {
 				result.add(new ObjectBase(
 						cursorGroup.getInt(TABLE.CELLS.ID.getIndex()),
 						cursorGroup.getString(TABLE.CELLS.NAME.getIndex()),
-						cursorGroup.getInt(TABLE.CELLS.YEAR.getIndex()),
-						cursorGroup.getInt(TABLE.CELLS.HAS_COURSE_WORK.getIndex())
+						cursorGroup.getInt(TABLE.CELLS.YEAR.getIndex())
 						));
 			} while (cursorGroup.moveToNext());
 		}
@@ -98,8 +67,7 @@ public class ObjectHelper {
 			result =  new ObjectBase(
 								cursorGroup.getInt(TABLE.CELLS.ID.getIndex()),
 								cursorGroup.getString(TABLE.CELLS.NAME.getIndex()),
-								cursorGroup.getInt(TABLE.CELLS.YEAR.getIndex()),
-								cursorGroup.getInt(TABLE.CELLS.HAS_COURSE_WORK.getIndex())
+								cursorGroup.getInt(TABLE.CELLS.YEAR.getIndex())
 					);
 		}
 		cursorGroup.close();

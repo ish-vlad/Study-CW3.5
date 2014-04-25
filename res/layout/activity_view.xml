@@ -4,100 +4,60 @@
     style="@style/AppTheme"
     a:layout_width="match_parent"
     a:layout_height="match_parent"
-    a:orientation="vertical"
     a:paddingTop="@dimen/step_1" >
 
-    <RelativeLayout
-        a:id="@+id/view_head"
+    <LinearLayout
+        a:id="@+id/view_header"
         a:layout_width="match_parent"
-        a:layout_height="wrap_content"
+        a:layout_height="@dimen/step_3"
         a:layout_alignParentTop="true"
-        a:paddingLeft="@dimen/step_1"
-        a:paddingRight="@dimen/step_1" >
+        a:orientation="horizontal" >
 
         <TextView
-            a:id="@+id/view_head_name"
-            a:layout_width="wrap_content"
-            a:layout_height="wrap_content"
-            a:layout_alignParentStart="true"
-            a:gravity="center"
-            a:textColor="#BEBEBE" />
+            a:id="@+id/view_header_btn_left"
+            a:layout_width="@dimen/step_3"
+            a:layout_height="match_parent"
+            a:layout_weight="0"
+            a:background="@drawable/left"
+            a:gravity="center" />
+
+        <View
+            a:id="@+id/view_header_separator_left"
+            a:layout_width="@dimen/step_1_8"
+            a:layout_height="match_parent"
+            a:background="@android:color/darker_gray" />
 
         <TextView
-            a:id="@+id/view_head_procent"
+            a:id="@+id/view_header_title"
             a:layout_width="wrap_content"
-            a:layout_height="wrap_content"
-            a:layout_alignParentLeft="true"
-            a:layout_below="@id/view_head_name"
-            a:gravity="center"
-            a:textColor="#BEBEBE" />
+            a:layout_height="match_parent"
+            a:layout_weight="10"
+            a:gravity="center" />
+
+        <View
+            a:id="@+id/view_header_separator_right"
+            a:layout_width="@dimen/step_1_8"
+            a:layout_height="match_parent"
+            a:background="@android:color/darker_gray" />
 
         <TextView
-            a:id="@+id/view_head_points"
-            a:layout_width="wrap_content"
-            a:layout_height="wrap_content"
-            a:layout_alignParentRight="true"
+            a:id="@+id/view_header_btn_right"
+            a:layout_width="@dimen/step_3"
+            a:layout_height="match_parent"
+            a:layout_weight="0"
+            a:background="@drawable/right"
             a:gravity="center"
-            a:textColor="#BEBEBE" />
-    </RelativeLayout>
+            a:maxWidth="@dimen/step_3" />
+    </LinearLayout>
 
-    <View
-        a:id="@+id/view_separator"
-        a:layout_width="match_parent"
-        a:layout_height="@dimen/step_1_8"
-        a:layout_below="@id/view_head"
-        a:background="@android:color/darker_gray" />
-
-    <TabHost
-        a:id="@+id/view_tab_host"
+    <ListView
+        a:id="@+id/view_body"
         a:layout_width="match_parent"
         a:layout_height="wrap_content"
-        a:layout_below="@id/view_separator" >
-
-        <RelativeLayout
-            a:layout_width="match_parent"
-            a:layout_height="wrap_content" >
-
-            <TabWidget
-                a:id="@android:id/tabs"
-                a:layout_width="match_parent"
-                a:layout_height="@dimen/step_3"
-                a:layout_alignParentTop="true" />
-
-            <FrameLayout
-                a:id="@android:id/tabcontent"
-                a:layout_width="match_parent"
-                a:layout_height="wrap_content"
-                a:layout_alignParentBottom="true"
-                a:layout_below="@android:id/tabs"
-                a:paddingLeft="@dimen/step_1_2"
-                a:paddingRight="@dimen/step_1_2" >
-
-                <ProgressBar
-                    style="@android:style/Widget.ProgressBar.Small"
-                    a:layout_width="wrap_content"
-                    a:layout_height="wrap_content"
-                    a:layout_gravity="center"
-                    a:indeterminate="true" />
-            </FrameLayout>
-        </RelativeLayout>
-    </TabHost>
-
-    <View
-        a:id="@+id/view_separator_action_bar"
-        a:layout_width="match_parent"
-        a:layout_height="@dimen/step_1_8"
-        a:layout_below="@id/view_tab_host"
-        a:background="@android:color/darker_gray"
-        a:minHeight="@dimen/step_1_8" />
-
-    <TextView
-        a:id="@+id/view_action_bar"
-        a:layout_width="match_parent"
-        a:layout_height="@dimen/step_2"
-        a:layout_below="@id/view_separator_action_bar"
-        a:background="#BEBEBE"
-        a:minHeight="@dimen/step_2"
-        a:text="@string/title_empty_view" />
+        a:layout_alignParentBottom="true"
+        a:layout_below="@id/view_header"
+        a:paddingLeft="@dimen/step_1"
+        a:paddingRight="@dimen/step_1" />
+    
 
 </RelativeLayout>

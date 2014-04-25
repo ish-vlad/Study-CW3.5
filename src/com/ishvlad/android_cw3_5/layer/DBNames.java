@@ -33,7 +33,6 @@ public class DBNames {
 				public final Cell ID = new Cell("_id", 0);
 				public final Cell NAME = new Cell("name", 1);
 				public final Cell YEAR = new Cell("year", 2);
-				public final Cell HAS_COURSE_WORK = new Cell("hasCourseWork", 3);
 			}
 		}
 		public static class ClassObject {
@@ -91,8 +90,7 @@ public class DBNames {
 			public static class ClassLectureCells {
 				public final Cell ID = new Cell("_id", 0);
 				public final Cell DATE = new Cell("date", 1);
-				public final Cell CLASS_ID = new Cell("class_id", 2);
-				public final Cell LECTURE_ID = new Cell("lecture_id", 3);
+				public final Cell LECTURE_ID = new Cell("lecture_id", 2);
 				
 			}
 		}
@@ -108,7 +106,7 @@ public class DBNames {
 				public final Cell ID = new Cell("_id", 0);
 				public final Cell COMMENT = new Cell("comment", 1);
 				public final Cell STUDENT_ID = new Cell("student_id", 2);
-				public final Cell LECTURE_ID = new Cell("lecture_id", 3);
+				public final Cell CLASS_LECTURE_ID = new Cell("class_lecture_id", 3);
 				
 			}
 		}

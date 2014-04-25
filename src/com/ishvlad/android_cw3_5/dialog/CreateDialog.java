@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.ishvlad.android_cw3_5.R;
-import com.ishvlad.android_cw3_5.activity.ChoiseActivity;
 import com.lamerman.FileDialog;
 import com.lamerman.SelectionMode;
 
@@ -71,7 +70,7 @@ public class CreateDialog extends DialogFragment implements OnClickListener {
             startActivityForResult(intent, 1);
             break;
 		case R.id.dialog_btn_ok:
-			((ChoiseActivity)getActivity()).commit(((EditText)mainView.findViewById(R.id.dialog_edit_text)).getText().toString(), newData);
+			//((ChoiseActivity)getActivity()).commit(((EditText)mainView.findViewById(R.id.dialog_edit_text)).getText().toString(), newData);
 			dismiss();
 			break;
 		}

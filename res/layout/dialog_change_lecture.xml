@@ -4,25 +4,6 @@
     a:layout_height="match_parent"
     a:orientation="vertical"
     a:padding="@dimen/step_1" >
-
-    <TextView
-        a:id="@+id/textView5"
-        a:layout_width="match_parent"
-        a:layout_height="wrap_content"
-        a:gravity="left"
-        a:paddingBottom="@dimen/step_1_8"
-        a:singleLine="true"
-        a:text="@string/view_name" />
-
-    <EditText
-        a:id="@+id/dialog_change_lecture_name"
-        a:layout_width="match_parent"
-        a:layout_height="wrap_content"
-        a:gravity="left"
-        a:paddingBottom="@dimen/step_1_8"
-        a:paddingLeft="@dimen/step_1_2"
-        a:singleLine="true" />
-
     <TextView
         a:id="@+id/textView6"
         a:layout_width="match_parent"
@@ -59,22 +40,20 @@
         a:paddingBottom="@dimen/step_1_8"
         a:paddingLeft="@dimen/step_1_2"
         a:singleLine="true" />
-    
-    
 
-    <LinearLayout
+    <RelativeLayout
         a:layout_width="match_parent"
         a:layout_height="wrap_content"
-        a:orientation="horizontal"
-        a:paddingLeft="@dimen/step_3"
-        a:paddingRight="@dimen/step_3" >
+        a:paddingLeft="@dimen/step_1"
+        a:paddingRight="@dimen/step_1" >
 
         <Button
             a:id="@+id/dialog_lect_btn_commit"
             a:layout_width="wrap_content"
             a:layout_height="@dimen/step_3"
+            a:layout_alignParentLeft="true"
+            a:layout_centerVertical="true"
             a:layout_marginRight="@dimen/step_1_2"
-            a:layout_weight="1"
             a:background="@android:drawable/btn_default"
             a:paddingLeft="@dimen/step_1"
             a:paddingRight="@dimen/step_1"
@@ -88,12 +67,28 @@
             a:layout_height="@dimen/step_3"
             a:layout_marginLeft="@dimen/step_1_2"
             a:layout_weight="1"
+            a:layout_toRightOf="@id/dialog_lect_btn_commit"
             a:background="@android:drawable/btn_default"
             a:paddingLeft="@dimen/step_1"
             a:paddingRight="@dimen/step_1"
             a:singleLine="true"
             a:text="@string/cancel"
             a:textColor="#101010" />
-    </LinearLayout>
+
+        <Button
+            a:id="@+id/dialog_lect_btn_delete"
+            a:layout_width="@dimen/step_3"
+            a:layout_height="@dimen/step_3"
+            a:layout_alignParentRight="true"
+            a:layout_centerVertical="true"
+            a:layout_marginLeft="@dimen/step_1_2"
+            a:layout_toRightOf="@id/dialog_lect_btn_cancel"
+            a:background="@android:drawable/btn_default"
+            a:paddingLeft="@dimen/step_1"
+            a:paddingRight="@dimen/step_1"
+            a:singleLine="true"
+            a:text="@string/delete"
+            a:textColor="#101010" />
+    </RelativeLayout>
 
 </LinearLayout>

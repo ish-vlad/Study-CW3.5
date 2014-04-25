@@ -35,13 +35,15 @@
     <string name="title_choise_object">Выберите предмет</string>
     <string name="title_dialog_add_comment">Комментарии</string>
     <string name="title_dialog_check_people">Отметьте присутствующих</string>
-    <string name="title_dialog_choose_lecture">Выберите тему</string>
+    <string name="title_dialog_choose">Выберите тему</string>
     <string name="title_dialog_lecture">Просмотр</string>
     <string name="title_dialog_open">Загрузить файл</string>
     <string name="title_dialog_open_body">Необходимо указать путь к файлу, соответствующему структуре XML-файла для добавления группы\\предмета</string>
     <string name="title_start_activity">Контроль устпеваемости</string>
     
-    <string name="toast_no_lectures">В данном разделе лекций нет.</string>
+    <string name="toast_no_content">Нет контента</string>
+    
+    <string name="text_comment_separator">//</string>
     
     <string name="view_name">Название:</string>
     <string name="view_date">Дата:</string>

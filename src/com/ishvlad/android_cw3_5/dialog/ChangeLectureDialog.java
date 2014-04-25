@@ -1,15 +1,7 @@
 package com.ishvlad.android_cw3_5.dialog;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
-import com.ishvlad.android_cw3_5.R;
-import com.ishvlad.android_cw3_5.activity.ViewActivity;
-import com.ishvlad.android_cw3_5.helper.LectureHelper;
-import com.ishvlad.android_cw3_5.helper.StudentHelper;
-import com.ishvlad.android_cw3_5.layer.LectureView;
 
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
@@ -18,31 +10,35 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ishvlad.android_cw3_5.R;
+import com.ishvlad.android_cw3_5.activity.ViewActivity;
+import com.ishvlad.android_cw3_5.helper.LectureHelper;
+import com.ishvlad.android_cw3_5.layer.Base;
 
 public class ChangeLectureDialog extends DialogFragment implements
 		OnClickListener {
 	private View mainView;
-	private LectureView mLecture;
-	private int mLectureId, mStudentId;
+	private int mLectureId;
+	private Base mStudent;
 	
 	public ChangeLectureDialog() {}
 	
-	public ChangeLectureDialog(int lectureId, int studentId) {
-		mStudentId = studentId;
-		mLectureId = lectureId;
+	public ChangeLectureDialog(Base student, int whatId) {
+		mStudent = student;
+		mLectureId = whatId;
 	}
 	
 
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
-		outState.putInt("student", mStudentId);
+		outState.putSerializable("student", mStudent);
 		outState.putInt("Lecture", mLectureId);
 		super.onSaveInstanceState(outState);
 	}
@@ -51,13 +47,9 @@ public class ChangeLectureDialog extends DialogFragment implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (savedInstanceState != null) {
-			mStudentId = savedInstanceState.getInt("student");
+			mStudent = (Base) savedInstanceState.getSerializable("student");
 			mLectureId = savedInstanceState.getInt("Lecture");
 		}
-		
-		mLecture = new LectureHelper(getActivity()).getLecture(mLectureId, mStudentId);
-		
-		
 	}
 	
 	@Override
@@ -67,9 +59,9 @@ public class ChangeLectureDialog extends DialogFragment implements
 		mainView = inflater.inflate(R.layout.dialog_change_lecture, null);
 		mainView.findViewById(R.id.dialog_lect_btn_commit).setOnClickListener(this);
 		mainView.findViewById(R.id.dialog_lect_btn_cancel).setOnClickListener(this);
-		((EditText)mainView.findViewById(R.id.dialog_change_lecture_name)).setText(mLecture.name);
-		((EditText)mainView.findViewById(R.id.dialog_change_lecture_date)).setText(new SimpleDateFormat("dd.MM.yyyy").format(mLecture.date));
-		((EditText)mainView.findViewById(R.id.dialog_change_lecture_comment)).setText(mLecture.comment);
+		mainView.findViewById(R.id.dialog_lect_btn_delete).setOnClickListener(this);
+		((EditText)mainView.findViewById(R.id.dialog_change_lecture_date)).setText(mStudent.date);
+		((EditText)mainView.findViewById(R.id.dialog_change_lecture_comment)).setText(mStudent.other);
 		((EditText)mainView.findViewById(R.id.dialog_change_lecture_date)).setOnTouchListener(new OnTouchListener() {
 			
 			@Override
@@ -103,16 +95,22 @@ public class ChangeLectureDialog extends DialogFragment implements
 	public void onClick(View v) {
 		switch(v.getId()) {
 		case R.id.dialog_lect_btn_commit:
+			String date = mStudent.date;
 			try {
 				saveChanges();
-				
-				((ViewActivity)getActivity()).refresh("Лекции");
-				
+				((ViewActivity)getActivity()).refresh();
 				dismiss();
 			} catch (ParseException e) {
+				mStudent.date = date;
 				Toast.makeText(getActivity(), "Invalid date (format: dd.mm.yyyy).", Toast.LENGTH_LONG).show();
 			}
+			
             break;
+		case R.id.dialog_lect_btn_delete:
+			new LectureHelper(getActivity()).delete(mStudent);
+			((ViewActivity)getActivity()).refresh();
+			dismiss();
+			break;
 		case R.id.dialog_lect_btn_cancel:
 			dismiss();
 			break;
@@ -120,29 +118,18 @@ public class ChangeLectureDialog extends DialogFragment implements
 	}
 
 	private void saveChanges() throws ParseException {
+		Base student = new Base();
 		
+		student.id = mStudent.id;
+		student.name = mStudent.name;
+		student.dateFromId = mStudent.dateFromId;
+		student.otherId = mStudent.otherId;
 		
-		String comment = ((EditText)mainView.findViewById(R.id.dialog_change_lecture_comment)).getText().toString();
-		mLecture.comment = comment;
+		student.other = ((EditText)mainView.findViewById(R.id.dialog_change_lecture_comment)).getText().toString();
 		
+		student.date = ((EditText)mainView.findViewById(R.id.dialog_change_lecture_date)).getText().toString();
 		
-		String name = ((EditText)mainView.findViewById(R.id.dialog_change_lecture_name)).getText().toString();
-		if (!name.equals("") && !name.equals(mLecture.name)) {
-			
-			mLecture.name = name;
-		}
-		
-		
-		long date = new SimpleDateFormat("dd.MM.yyyy").parse(
-				((EditText)mainView.findViewById(R.id.dialog_change_lecture_date)).getText().toString()
-															).getTime();
-		if (date != mLecture.date) {
-			
-			mLecture.date = date;
-		}
-		
-		new LectureHelper(getActivity()).update(mLecture, mStudentId);
-		
+		new LectureHelper(getActivity()).update(student, mStudent);
 	}
 
 }
