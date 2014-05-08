@@ -1,0 +1,48 @@
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    a:layout_width="match_parent"
+    a:layout_height="@dimen/step_4"
+    a:orientation="horizontal"
+    a:padding="@dimen/step_1_2" >
+
+    <TextView
+        a:id="@+id/item_var_lab_num"
+        a:layout_width="@dimen/step_3"
+        a:layout_height="@dimen/step_3"
+        a:layout_weight="0"
+        a:gravity="center"
+        a:maxWidth="@dimen/step_3"
+        a:width="@dimen/step_3" />
+
+    <TextView
+        a:id="@+id/item_var_lab_id"
+        a:layout_width="@dimen/step_1_8"
+        a:textColor="@android:color/darker_gray"
+        a:layout_height="match_parent"
+        a:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        a:layout_width="wrap_content"
+        a:layout_height="match_parent"
+        a:layout_weight="7"
+        a:orientation="vertical"
+        a:paddingLeft="@dimen/step_1_2" >
+
+        <TextView
+            a:id="@+id/item_var_lab_name"
+            a:layout_width="match_parent"
+            a:layout_height="wrap_content"
+            a:gravity="left"
+            a:layout_weight="1"
+            a:singleLine="true" />
+
+        <TextView
+            a:id="@+id/item_var_lab_other"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:gravity="left"
+            a:layout_weight="1"
+            a:singleLine="true" />
+    </LinearLayout>
+
+</LinearLayout>

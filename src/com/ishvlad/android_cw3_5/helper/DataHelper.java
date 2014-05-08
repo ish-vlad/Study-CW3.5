@@ -12,12 +12,15 @@ import com.ishvlad.android_cw3_5.layer.Base;
 import com.ishvlad.android_cw3_5.layer.DBNames;
 
 public abstract class DataHelper {
+	
 	public abstract Base upgradeBase(Base what, int studentId);
 	public abstract Base upgradeStudent(Base student, int whatId);
 	public abstract LinkedList<Base> getAllBase(int collectionId);
 	public abstract void insert(Base student, int whereId, int groupId);
 	public abstract void update(Base itemNew, Base itemOld) throws ParseException;
 	public abstract void delete(Base item);
+	
+	
 	
 	public LinkedList<Base> getAllStudents(int groupId) {
 		LinkedList<Base> result = new LinkedList<Base>();

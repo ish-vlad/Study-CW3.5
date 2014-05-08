@@ -44,14 +44,25 @@ public class DBHelper {
 	public int sizeInObject(String table, int objectId) {
 		String[] selectionArgs = new String[] {Integer.toString(objectId)};
 
-		Cursor cursorLect = DBHelper.mDB.rawQuery(
+		Cursor cursorLect = null;
+		int size = 0;
+		try {
+			cursorLect = DBHelper.mDB.rawQuery(
 				"SELECT COUNT(*) FROM " + table + 
 				" WHERE " + DBNames.TABLES.LECTURE.CELLS.OBJECT_ID + "== ?"
 				, selectionArgs
 				);
+			cursorLect.moveToFirst();
+			size = cursorLect.getInt(0);
+		} catch (Exception e) {
+		} finally {
+			try {
+				cursorLect.close();
+			} catch (NullPointerException e2) {
+			}
+		}
 		
-		cursorLect.moveToFirst();
-		return cursorLect.getInt(0);
+		return size;
 	}
 
 	public Cursor getAll(String table) {

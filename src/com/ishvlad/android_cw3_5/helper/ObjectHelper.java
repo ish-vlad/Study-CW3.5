@@ -74,4 +74,45 @@ public class ObjectHelper {
 		
 		return result;
 	}
+
+	public LinkedList<ObjectBase> getAllBaseFromNotGroupId(int groupId) {
+		String[] selectionArgs = new String[] {Integer.toString(groupId)};
+		DBHelper.getInstance(mCtx);
+		Cursor cursorGroup = DBHelper.mDB.rawQuery("SELECT * FROM " + TABLE  
+											+" WHERE _id NOT IN (" +
+											"SELECT " + DBNames.TABLES.CLASS_OBJECT.CELLS.OBJECT_ID + " FROM " +
+											DBNames.TABLES.CLASS_OBJECT + " WHERE " + DBNames.TABLES.CLASS_OBJECT.CELLS.CLASS_ID +
+											" == ? )"
+											, selectionArgs);
+		
+		LinkedList<ObjectBase> result = new LinkedList<ObjectBase>();
+		
+		if(cursorGroup.moveToFirst()) {
+			do {
+				result.add(new ObjectBase(
+						cursorGroup.getInt(TABLE.CELLS.ID.getIndex()),
+						cursorGroup.getString(TABLE.CELLS.NAME.getIndex()),
+						cursorGroup.getInt(TABLE.CELLS.YEAR.getIndex())
+						));
+			} while (cursorGroup.moveToNext());
+		}
+		cursorGroup.close();
+		
+		Collections.sort(result, new Comparator<ObjectBase>() {
+
+			@Override
+			public int compare(ObjectBase lhs, ObjectBase rhs) {
+				Integer secondYear = rhs.year;
+				
+				return secondYear.compareTo(lhs.year) != 0  ? secondYear.compareTo(lhs.year) 
+														    : lhs.name.compareTo(rhs.name); 
+			}
+		});
+		
+		return result;
+	}
+
+	public void addObject(int groupId, int objectId) {
+		DBHelper.mDB.execSQL("INSERT INTO ClassObject(class_id, object_id) VALUES ("+ groupId +", "+ objectId +");");
+	}
 }

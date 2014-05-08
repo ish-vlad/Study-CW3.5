@@ -139,11 +139,8 @@ public class DBNames {
 				public final Cell ID = new Cell("_id", 0);
 				public final Cell MARK = new Cell("mark", 1);
 				public final Cell DATE_START = new Cell("date_start", 2);
-				public final Cell DATE_FINISH = new Cell("date_finish", 3);
-				public final Cell VARIANT_ID = new Cell("variant_id", 4);
-				public final Cell STUDENT_ID = new Cell("student_id", 5);
-				public final Cell LAB_ID = new Cell("lab_id", 6);
-				
+				public final Cell VARIANT_ID = new Cell("variant_id", 3);
+				public final Cell STUDENT_ID = new Cell("student_id", 4);
 			}
 		}
 		public static class Variant {
@@ -157,8 +154,9 @@ public class DBNames {
 			public static class VariantCells {
 				public final Cell ID = new Cell("_id", 0);
 				public final Cell NAME = new Cell("name", 1);
-				public final Cell DATE = new Cell("date", 2);
-				public final Cell OBJECT_ID = new Cell("object_id", 3);
+				public final Cell NUMBER = new Cell("number", 2);
+				public final Cell TABLE_OWNER = new Cell("table_owner", 3);
+				public final Cell OWNER_ID = new Cell("owner_id", 4);
 			}
 		}
 		
@@ -177,6 +175,7 @@ public class DBNames {
 		public final StudentLab 			STUDENT_LAB = new StudentLab();
 		public final StudentLecture 		STUDENT_LECTURE = new StudentLecture();
 		
+		public final Variant				VARIANT = new Variant();
 	}
 	
 	public static class Cell {

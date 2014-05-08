@@ -4,7 +4,6 @@ import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,17 +11,20 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.ishvlad.android_cw3_5.R;
+import com.ishvlad.android_cw3_5.helper.JsonParser;
 import com.lamerman.FileDialog;
 import com.lamerman.SelectionMode;
 
 public class CreateDialog extends DialogFragment implements OnClickListener {
 	private View mainView;
 	private NewData newData;
+	private int mGroupId;
 	
 	public CreateDialog() {}
 	
-	public CreateDialog(NewData arg0) {
+	public CreateDialog(NewData arg0, int groupId) {
 		newData = arg0;
+		mGroupId = groupId;
 	}
 	
 	@Override
@@ -35,8 +37,6 @@ public class CreateDialog extends DialogFragment implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		if (savedInstanceState != null) {
 			newData = (NewData)savedInstanceState.getSerializable("NewData");
-			if (newData == NewData.GROUP) {Log.d("One", "GROUP!!");}
-			else {Log.d("One", "NO GROUP!!");}
 		}
 		super.onCreate(savedInstanceState);
 	}
@@ -66,16 +66,27 @@ public class CreateDialog extends DialogFragment implements OnClickListener {
             intent.putExtra(FileDialog.START_PATH,  Environment.getExternalStorageDirectory().getPath());
             intent.putExtra(FileDialog.CAN_SELECT_DIR, false);
             intent.putExtra(FileDialog.SELECTION_MODE, SelectionMode.MODE_OPEN);
-            intent.putExtra(FileDialog.FORMAT_FILTER, new String[] { "png" });
+            intent.putExtra(FileDialog.FORMAT_FILTER, new String[]{"json"});
             startActivityForResult(intent, 1);
             break;
 		case R.id.dialog_btn_ok:
-			//((ChoiseActivity)getActivity()).commit(((EditText)mainView.findViewById(R.id.dialog_edit_text)).getText().toString(), newData);
+			if (!((EditText)mainView.findViewById(R.id.dialog_edit_text)).getText().toString().equals("")) {
+				new JsonParser(
+						((EditText)mainView.findViewById(R.id.dialog_edit_text)).getText().toString(),
+						getActivity(),
+						newData,
+						mGroupId
+				).parse();
+			}
+			dismiss();
+			break;
+		case R.id.dialog_btn_cancel:
 			dismiss();
 			break;
 		}
 	}
 	
+
 	public enum NewData { GROUP,OBJECT }
 
 }

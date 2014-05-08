@@ -23,7 +23,7 @@ public class LectureHelper extends DataHelper {
 		DBHelper.mDB.execSQL(
 				"UPDATE " + DBNames.TABLES.CLASS_LECTURE +
 				" SET " + DBNames.TABLES.CLASS_LECTURE.CELLS.DATE + " = \"" + Long.toString(new SimpleDateFormat("dd.MM.yyyy").parse(lecture.date).getTime()) + 
-				"\" WHERE " + DBNames.TABLES.CLASS_LECTURE.CELLS.ID + " == " + Integer.toString(lecture.dateFromId) 
+				"\" WHERE " + DBNames.TABLES.CLASS_LECTURE.CELLS.ID + " == " + Long.toString(lecture.dateFromId) 
 			);
 	}
 	
@@ -31,7 +31,7 @@ public class LectureHelper extends DataHelper {
 		DBHelper.mDB.execSQL(
 				"UPDATE " + DBNames.TABLES.STUDENT_LECTURE +
 				" SET " + DBNames.TABLES.STUDENT_LECTURE.CELLS.COMMENT + " = \"" + (lecture.other) + 
-				"\" WHERE " + DBNames.TABLES.STUDENT_LECTURE.CELLS.ID + " == " + Integer.toString(lecture.otherId) 
+				"\" WHERE " + DBNames.TABLES.STUDENT_LECTURE.CELLS.ID + " == " + Long.toString(lecture.otherId) 
 		);
 	}
 	
@@ -188,10 +188,10 @@ public class LectureHelper extends DataHelper {
 	public void delete(Base item) {
 		DBHelper.mDB.execSQL(
 				"DELETE FROM " + DBNames.TABLES.STUDENT_LECTURE + 
-				" WHERE " + DBNames.TABLES.STUDENT_LECTURE.CELLS.ID + " == "  + Integer.toString(item.otherId)
+				" WHERE " + DBNames.TABLES.STUDENT_LECTURE.CELLS.ID + " == "  + Long.toString(item.otherId)
 		);
 		
-		String[] selectionArgs = new String[] {Integer.toString(item.dateFromId)};
+		String[] selectionArgs = new String[] {Long.toString(item.dateFromId)};
 		Cursor cursor = DBHelper.mDB.rawQuery(
 				"SELECT * FROM " + DBNames.TABLES.STUDENT_LECTURE +
 				" WHERE " + DBNames.TABLES.STUDENT_LECTURE.CELLS.CLASS_LECTURE_ID + " == ? ", selectionArgs
@@ -200,7 +200,7 @@ public class LectureHelper extends DataHelper {
 		if(!cursor.moveToFirst()) {
 			DBHelper.mDB.execSQL(
 					"DELETE FROM " + DBNames.TABLES.CLASS_LECTURE + 
-					" WHERE " + DBNames.TABLES.CLASS_LECTURE.CELLS.ID + " == "  + Integer.toString(item.dateFromId)
+					" WHERE " + DBNames.TABLES.CLASS_LECTURE.CELLS.ID + " == "  + Long.toString(item.dateFromId)
 			);	
 		}
 		cursor.close();

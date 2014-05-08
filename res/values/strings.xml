@@ -22,6 +22,7 @@
     
     <string name="app_name">Android-CW3_5</string>
 
+    <string name="btn_new_object">Новый предмет</string>
     <string name="btn_start_view">Просмотреть</string>
     <string name="btn_start_lecture">Начать Лекцию</string>
     <string name="btn_start_labs">Начать Лабы</string>
@@ -33,15 +34,20 @@
     <string name="title_empty_view">Пусто</string>
     <string name="title_choise_group">Выберите группу</string>
     <string name="title_choise_object">Выберите предмет</string>
+    <string name="title_dialog_append">Добавить предмет</string>
     <string name="title_dialog_add_comment">Комментарии</string>
     <string name="title_dialog_check_people">Отметьте присутствующих</string>
-    <string name="title_dialog_choose">Выберите тему</string>
+    <string name="title_dialog_choose_with_semafor">Выберите тему</string>
+    <string name="title_dialog_choose">Выберите студента</string>
     <string name="title_dialog_lecture">Просмотр</string>
+    <string name="title_dialog_mark">Оценка</string>
     <string name="title_dialog_open">Загрузить файл</string>
     <string name="title_dialog_open_body">Необходимо указать путь к файлу, соответствующему структуре XML-файла для добавления группы\\предмета</string>
+    <string name="title_dialog_variant">Выберите вариант</string>
     <string name="title_start_activity">Контроль устпеваемости</string>
     
     <string name="toast_no_content">Нет контента</string>
+    <string name="toast_no_long_click_lab">Нельзя! Есть варианты</string>
     
     <string name="text_comment_separator">//</string>
     

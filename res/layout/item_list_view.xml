@@ -2,9 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     a:layout_width="match_parent"
     a:layout_height="@dimen/step_4"
-    a:orientation="horizontal"
-    a:padding="@dimen/step_1_2" >
-
+   a:padding="@dimen/step_1_2"
+     >
+<LinearLayout 
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+     a:orientation="horizontal">
     <RelativeLayout
         a:id="@+id/item_student_block"
         a:layout_width="wrap_content"
@@ -26,15 +29,16 @@
             a:layout_height="wrap_content"
             a:layout_alignParentBottom="true"
             a:layout_below="@id/item_student_name"
-            a:paddingBottom="@dimen/step_1_4"
-            a:paddingLeft="@dimen/step_1" >
+            a:paddingBottom="@dimen/step_1_4" >
 
             <TextView
                 a:id="@+id/item_student_date"
                 a:layout_width="wrap_content"
                 a:layout_height="wrap_content"
                 a:layout_alignParentTop="true"
+                a:paddingRight="@dimen/step_1"
                 a:layout_alignParentLeft="true"
+                a:paddingLeft="@dimen/step_1_2"
                 a:gravity="left" />
 
             <TextView
@@ -42,7 +46,6 @@
                 a:layout_width="wrap_content"
                 a:layout_height="wrap_content"
                 a:layout_alignParentTop="true"
-                a:paddingLeft="@dimen/step_1"
                 a:layout_toRightOf="@id/item_student_date"
                 a:gravity="left"
                 a:text="@string/text_comment_separator" />
@@ -70,7 +73,10 @@
         a:layout_height="@dimen/step_3"
         a:layout_weight="0"
         a:maxWidth="@dimen/step_3"
-        a:padding="@dimen/step_1_2"
+        a:padding="@dimen/step_1_4"
+        a:textSize="@dimen/step_2"
+        a:textStyle="bold"
+        a:gravity="center"
         a:width="@dimen/step_3" />
-
+</LinearLayout>
 </LinearLayout>

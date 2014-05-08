@@ -12,7 +12,19 @@ public class Base  implements Comparable<Base>, Serializable{
 	public String name;
 	public String date = "", other = "";
 	public int dateFromId = 0, otherId = 0;
+	public int mark = -1;
 	
+	public Base copy() {
+		return new Base(
+				id,
+				name,
+				dateFromId,
+				date,
+				otherId,
+				other,
+				mark
+			);
+	}
 	
 	public Base(int ID, String Name, long DATE) {
 		id = ID;
@@ -27,6 +39,16 @@ public class Base  implements Comparable<Base>, Serializable{
 		date = Date;
 		otherId = anotherId;
 		other = anotherInfo;
+	}
+	
+	public Base(int ID, String Name, int DateFromId, String Date, int anotherId, String anotherInfo, int Mark) {
+		id = ID;
+		name = Name;
+		dateFromId = DateFromId;
+		date = Date;
+		otherId = anotherId;
+		other = anotherInfo;
+		mark = Mark;
 	}
 	
 	public Base() {
